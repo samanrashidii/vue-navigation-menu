@@ -1,0 +1,29 @@
+{
+  "name": "vue-navigation-menu",
+  "version": "1.0.0",
+  "description": "Responsive Multi-level navigation component created by vuejs",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samanrashidii/vue-navigation-menu.git"
+  },
+  "keywords": [
+    "vuejs",
+    "navigation",
+    "vue-navigation",
+    "multilevel",
+    "multilevel-navigation"
+  ],
+  "author": "Samanrashidii",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samanrashidii/vue-navigation-menu/issues"
+  },
+  "homepage": "https://github.com/samanrashidii/vue-navigation-menu#readme"
+}
