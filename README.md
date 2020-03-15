@@ -13,7 +13,7 @@ Persian - RTL
 <!-- You can see demo by clicking below link : <br />
 [https://gifmereact.netlify.com](https://gifmereact.netlify.com) -->
 
-## Getting Started
+## Start project in development
 
 Clone the project from Github:
 
@@ -21,28 +21,24 @@ Clone the project from Github:
 git clone git@github.com:samanrashidii/vue-navigation-menu.git
 ```
 
-Install and save dependencies:
+Install Vue-cli Global Service
 
 ```
-npm install --save --verbose
+npm install -g @vue/cli
+npm install -g @vue/cli-service-global
 ```
 
-Start the project:
+Run the project:
 
 ```
-npm start
-```
-
-Build project:
-
-```
-npm run build
+cd vue-navigation-menu
+vue serve src/index.vue
 ```
 
 ## Built With
 
-* React
-* JSX
+* Vuejs
+* HTML
 * Sass
 * Javascript
 
