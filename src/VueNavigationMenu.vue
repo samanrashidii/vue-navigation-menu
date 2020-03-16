@@ -10,7 +10,7 @@
 			<ul class="vue-navigation-menu__submenu" v-if="item.submenu && item.submenu.length > 0">
 				<li v-for="submenuItem in item.submenu" :key="submenuItem.value">
 					<a href="#" @click.prevent="itemClicked(submenuItem.url)">
-						<Icon v-if="item.icon" :name="item.icon" />
+						<Icon v-if="submenuItem.icon" :name="submenuItem.icon" />
 						<span>{{ submenuItem.value }}</span>
 					</a>
 				</li>
@@ -56,6 +56,10 @@ $dark: #212529;
 $darker: #1a1d20;
 $white: #f8f9fa;
 $grey: #dadada;
+$fontsize-sm: 13px;
+$fontsize-xs: 11px;
+$transition: all .2s ease-in-out;
+$submenu-min-width: 150px;
 
 .vue-navigation-menu {
   width:100%;
@@ -72,17 +76,17 @@ $grey: #dadada;
 	li{
 		a{
 			display:flex;
-			font-size: 13px;
+			font-size: $fontsize-sm;
 			outline: none;
 			text-decoration: none;
 			padding:13px 20px;
-			transition: all .2s ease-in-out;
+			transition: $transition;
 			svg{
 				width: 12px;
 				height: 14px;
 				color: inherit;
 				margin-right:5px;
-				transition: all .2s ease-in-out;
+				transition: $transition;
 				&.submenu-arrow{
 					margin-top: -2px;
 					margin-right: 0;
@@ -90,18 +94,52 @@ $grey: #dadada;
 				}
 			}
 		}
-		ul{
-			display:none;
+		.vue-navigation-menu__submenu{
+			position: absolute;
+			min-width: $submenu-min-width;
+			overflow: hidden;
+			opacity: 0;
+			visibility: hidden;
+			flex-direction: column;
+			border-top:1px solid transparent;
+			border-radius: 0 0 4px 4px;
+			z-index: 99;
+			transition: $transition;
+			li{
+				a{
+					font-size: $fontsize-xs;
+					svg{
+						width: 10px;
+						height: 12px;
+						margin-right:8px;
+						&.submenu-arrow{
+							margin-right: 0;
+							margin-left: 8px;
+						}
+					}
+				}
+			}
+		}
+		&:hover{
+			.vue-navigation-menu__submenu {
+				opacity: 1;
+				visibility: visible;
+			}
 		}
 	}
   }
   &.vue-navigation-menu--dark{
-	ul li a{
-		color: $white;
-		background-color: $dark;
-		&:hover{
-			color:$grey;
-			background-color: $darker;
+	ul li{
+		a{
+			color: $white;
+			background-color: $dark;
+			&:hover{
+				color:$grey;
+				background-color: $darker;
+			}
+		}
+		.vue-navigation-menu__submenu{
+			border-top-color: $darker;
 		}
 	}
   }

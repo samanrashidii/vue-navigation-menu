@@ -10,39 +10,14 @@
        "icon": "address-book",
        "submenu":[
           {
-             "name":"Biography",
-             "url":"#"
+            "value":"Biography",
+            "url":"#",
+            "icon": "user"
           },
           {
-             "name":"Contact",
-             "url":"#"
-          }
-       ]
-    },
-    {
-       "value":"Products",
-       "url":"#",
-       "icon": "shopping-cart",
-       "submenu":[
-          {
-             "value":"Game Applications",
-             "url":"#"
-          },
-          {
-             "value":"Web Applications",
-             "url":"#"
-          },
-          {
-             "value":"Restaurant Menu",
-             "url":"#"
-          },
-          {
-             "value":"Android Applications",
-             "url":"#"
-          },
-          {
-             "value":"iOS Applications",
-             "url":"#"
+            "value":"Contact",
+            "url":"#",
+            "icon": "phone"
           }
        ]
     },
@@ -50,10 +25,41 @@
       "value":"Blog",
       "icon": "file-alt",
       "url":"#"
-   },
-   {
+    },
+    {
+       "value":"Products",
+       "url":"#",
+       "icon": "shopping-cart",
+       "submenu":[
+          {
+            "value":"Game Applications",
+            "url":"#",
+            "icon": "gamepad"
+          },
+          {
+            "value":"Web Applications",
+            "url":"#",
+            "icon": "archive"
+          },
+          {
+            "value":"Restaurant Menu",
+            "url":"#",
+            "icon": "pizza-slice"
+          },
+          {
+            "value":"Android Applications",
+            "url":"#",
+            "icon": "archive"
+          },
+          {
+            "value":"iOS Applications",
+            "url":"#",
+            "icon": "archive"
+          }
+       ]
+    },
+    {
       "value":"Privacy and Policy",
-      "icon": "gavel",
       "url":"#"
-   }
+    }
  ]
