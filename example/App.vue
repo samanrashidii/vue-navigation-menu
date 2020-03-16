@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <VueNavigationMenu :items="items" />asd
+    <div class="nav-wrapper">
+      <VueNavigationMenu :items="items" />
+    </div>
   </div>
 </template>
 
@@ -24,3 +26,15 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+.nav-wrapper {
+  position: fixed;
+  top:0;
+  left: 0;
+  width:100%;
+  z-index: 99;
+}
+
+</style>

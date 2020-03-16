@@ -25,28 +25,25 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .vue-navigation-menu {
-  position: fixed;
-  top:0;
-  left: 0;
+  display:flex;
   width:100%;
   background-color: #212529;
-  z-index: 99;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-.vue-navigation-menu ul{
-  padding:0;
-  margin:0;
-  list-style:none;
-}
-
-.vue-navigation-menu a{
-  color: #f8f9fa;
-  outline: none;
-  text-decoration: none;
+  ul{
+	padding:0;
+	margin:0;
+	list-style:none;
+	li{
+		a{
+			color: #f8f9fa;
+			outline: none;
+			text-decoration: none;
+		}
+	}
+  }
 }
 </style>
