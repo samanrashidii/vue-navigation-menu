@@ -2,13 +2,17 @@
   "name": "vue-navigation-menu",
   "version": "1.0.0",
   "description": "Responsive multi-level navigation made with vuejs",
-  "main": "index.js",
-  "directories": {
-    "example": "example"
-  },
+  "author": "Samanrashidii",
+  "license": "MIT",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vue serve VueNavigationMenu.vue",
+    "build": "bili --name index --plugin vue --vue.css false",
+    "biliBuild": "npx bili --bundle-node-modules"
   },
+  "files": [
+    "dist/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/samanrashidii/vue-navigation-menu.git"
@@ -21,10 +25,13 @@
     "vue-multilevel-navigation",
     "vue-navigation-menu"
   ],
-  "author": "Samanrashidii",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/samanrashidii/vue-navigation-menu/issues"
   },
-  "homepage": "https://github.com/samanrashidii/vue-navigation-menu#readme"
+  "homepage": "https://github.com/samanrashidii/vue-navigation-menu#readme",
+  "devDependencies": {
+    "bili": "^4.8.1",
+    "rollup-plugin-vue": "^5.1.6",
+    "vue-template-compiler": "^2.6.11"
+  }
 }

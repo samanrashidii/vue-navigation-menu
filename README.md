@@ -32,7 +32,7 @@ Run the project:
 
 ```
 cd vue-navigation-menu
-vue serve src/index.vue
+npm run dev
 ```
 
 ## Built With
