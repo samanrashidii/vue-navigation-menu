@@ -39,7 +39,7 @@ npm run dev
 
 * Vuejs
 * HTML
-* Sass
+* CSS
 * Javascript
 
 ## Contributing
