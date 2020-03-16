@@ -1,6 +1,6 @@
 # Vue Navigation Menu
 
-This is a responsive navigation component made with Vuejs and 2 types of horizontal and vertical. You can use different colors, sizes and icons to customize your navigation based on your project.
+This is a responsive navigation component made with Vuejs and 2 types of horizontal and vertical. You can use different colors, sizes and fontawesome icons to customize your navigation based on your project.
 
 ## Language
 
