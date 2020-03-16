@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    Vue Navigation Menu
+    <VueNavigationMenu />
   </div>
 </template>
 
