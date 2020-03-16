@@ -1,10 +1,11 @@
 <template>
-  <nav class="vue-navigation-menu" :class="variant">
+  <nav class="vue-navigation-menu" :class="[`vue-navigation-menu--${variant}`, `vue-navigation-menu--icon-${iconVariant}`]">
     <ul>
 		<li v-for="(item, index) in items" :key="index">
 			<a href="#" @click.prevent="itemClicked(item.url)">
 				<Icon v-if="item.icon" :name="item.icon" />
 				<span>{{ item.value }}</span>
+				<Icon v-if="item.submenu && item.submenu.length > 0" name="sort-down" class="submenu-arrow" />
 			</a>
 			<ul class="vue-navigation-menu__submenu" v-if="item.submenu && item.submenu.length > 0">
 				<li v-for="submenuItem in item.submenu" :key="submenuItem.value">
@@ -34,7 +35,11 @@ export default {
 	},
 	variant: {
 		type: String,
-		default: 'dark',
+		default: 'dark'
+	},
+	iconVariant: {
+		type: String,
+		default: 'default'
 	}
   },
   methods: {
@@ -75,7 +80,14 @@ $grey: #dadada;
 			svg{
 				width: 12px;
 				height: 14px;
+				color: inherit;
 				margin-right:5px;
+				transition: all .2s ease-in-out;
+				&.submenu-arrow{
+					margin-top: -2px;
+					margin-right: 0;
+					margin-left: 5px;
+				}
 			}
 		}
 		ul{
@@ -83,13 +95,29 @@ $grey: #dadada;
 		}
 	}
   }
-  &.dark{
+  &.vue-navigation-menu--dark{
 	ul li a{
 		color: $white;
 		background-color: $dark;
 		&:hover{
 			color:$grey;
 			background-color: $darker;
+		}
+	}
+  }
+  &.vue-navigation-menu--icon-light{
+	ul li a svg{
+		color: $white;
+		&:hover{
+			color:$grey;
+		}
+	}
+  }
+  &.vue-navigation-menu--icon-dark{
+	ul li a svg{
+		color: $dark;
+		&:hover{
+			color:$darker;
 		}
 	}
   }
