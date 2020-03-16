@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "./dist/index.js",
   "scripts": {
-    "dev": "vue serve VueNavigationMenu.vue",
+    "dev": "vue serve ./src/VueNavigationMenu.vue",
     "build": "bili --name index --plugin vue --vue.css false",
     "biliBuild": "npx bili --bundle-node-modules"
   },
