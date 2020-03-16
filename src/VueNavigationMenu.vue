@@ -86,7 +86,6 @@ $submenu-min-width: 150px;
 				height: 14px;
 				color: inherit;
 				margin-right:5px;
-				transition: $transition;
 				&.submenu-arrow{
 					margin-top: -2px;
 					margin-right: 0;
