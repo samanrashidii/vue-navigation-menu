@@ -1,1 +1,46 @@
-[{"name":"Menu 1","url":"/link/menu-1","sub-menus":[]},{"name":"Menu 2","url":"/link/menu-2","sub-menus":[{"name":"Menu 2-1","url":"/link/menu-2-1","sub-menus":[]},{"name":"Menu 2-2","url":"/link/menu-2-2","sub-menus":[]}]},{"name":"Menu 3","url":"/link/menu-3","sub-menus":[{"name":"Menu 3-1","url":"/link/menu-2-1","sub-menus":[{"name":"Menu 3-1-1","url":"/link/menu-3-1-1","sub-menus":[]}]},{"name":"Menu 3-2","url":"/link/menu-2-2","sub-menus":[]}]}]
+[
+    {
+       "value":"Home",
+       "url":"#"
+    },
+    {
+       "value":"About",
+       "url":"#",
+       "submenu":[
+          {
+             "name":"Biography",
+             "url":"#"
+          },
+          {
+             "name":"Contact",
+             "url":"#"
+          }
+       ]
+    },
+    {
+       "value":"Products",
+       "url":"#",
+       "submenu":[
+          {
+             "value":"Game Applications",
+             "url":"#"
+          },
+          {
+             "value":"Web Applications",
+             "url":"#"
+          },
+          {
+             "value":"Restaurant Menu",
+             "url":"#"
+          },
+          {
+             "value":"Android Applications",
+             "url":"#"
+          },
+          {
+             "value":"iOS Applications",
+             "url":"#"
+          }
+       ]
+    }
+ ]

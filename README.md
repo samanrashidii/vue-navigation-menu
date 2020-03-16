@@ -1,12 +1,10 @@
 # Vue Navigation Menu
 
-This is a responsive multi-level navigation component made with Vuejs and has different variations of layout and color.
+This is a responsive navigation component made with Vuejs and has different variations of layout and color.
 
 ## Language
 
 English - LTR
-
-Persian - RTL
 
 ## Demo
 

@@ -7,6 +7,7 @@
   "main": "./dist/index.js",
   "scripts": {
     "dev": "vue serve ./src/VueNavigationMenu.vue",
+    "example": "vue serve ./example/main.js",
     "build": "bili --name index --plugin vue --vue.css false",
     "biliBuild": "npx bili --bundle-node-modules"
   },

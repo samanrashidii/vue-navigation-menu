@@ -1,32 +1,27 @@
 <template>
-  <div>
+  <div class="vue-navigation-menu">
     <ul>
-      <VueNavigationSubMenu 
-        v-for="menu in data" 
-        :name="menu.name" 
-        :url="menu.url" 
-        :subMenus="menu['sub-menus']"
-		:key="menu.name"
-	/>
+		<li v-for="(item, index) in items" :key="index">
+			<a :href="item.url" >{{ item.value }}</a>
+			<ul class="vue-navigation-menu__submenu" v-if="item.submenu && item.submenu.length > 0">
+				<li v-for="submenuItem in item.submenu" :key="submenuItem.value">
+					<a :href="submenuItem.url" >{{ submenuItem.value }}</a>
+				</li>
+			</ul>
+		</li>
     </ul>
   </div>
 </template>
 <script>
-import Data from "../example/data.json"
-import VueNavigationSubMenu from './VueNavigationSubMenu.vue'
 export default {
   name: 'vue-navigation-menu',
-  components: {
-	VueNavigationSubMenu
-  },
-  data () {
-	return {
-		data: Data
+  props: {
+    items: {
+		type:Array,
+		default: () => [],
+		required:true
 	}
-  },
-//   props: {
-//     menus: {type:Array, required:true}
-//   }
+  }
 }
 </script>
 
