@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="nav-wrapper">
-      <VueNavigationMenu :items="items" />
+      <VueNavigationMenu :items="items" vertical />
     </div>
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     handleClick () {
-      
+
     } 
   }
 }

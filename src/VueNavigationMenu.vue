@@ -1,5 +1,8 @@
 <template>
-  <nav class="vue-navigation-menu" :class="[`vue-navigation-menu--${variant}`, `vue-navigation-menu--icon-${iconVariant}`]">
+  <nav
+  class="vue-navigation-menu"
+  :class="[`vue-navigation-menu--${variant}`, `vue-navigation-menu--icon-${iconVariant}`, {'vertical': vertical}]"
+  >
     <ul>
 		<li v-for="(item, index) in items" :key="index">
 			<a href="#" @click.prevent="itemClicked(item.url)">
@@ -40,6 +43,10 @@ export default {
 	iconVariant: {
 		type: String,
 		default: 'default'
+	},
+	type: {
+		type: Boolean,
+		default: false
 	}
   },
   methods: {
@@ -60,6 +67,7 @@ $fontsize-sm: 13px;
 $fontsize-xs: 11px;
 $transition: all .2s ease-in-out;
 $submenu-min-width: 150px;
+$vertical-width: 300px;
 
 .vue-navigation-menu {
   width:100%;
@@ -155,6 +163,23 @@ $submenu-min-width: 150px;
 		color: $dark;
 		&:hover{
 			color:$darker;
+		}
+	}
+  }
+  &[vertical]{
+	max-width: $vertical-width;
+	min-height: 100vh;
+	height: 100%;
+	ul{
+		flex-direction: column;
+		li{
+			.vue-navigation-menu__submenu{
+				position: relative;
+				opacity: 1;
+				visibility: visible;
+				padding-left: 15px;
+				border-top:none;
+			}
 		}
 	}
   }
