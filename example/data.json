@@ -1,11 +1,13 @@
 [
     {
        "value":"Home",
-       "url":"#"
+       "url":"#",
+       "icon": "home"
     },
     {
        "value":"About",
        "url":"#",
+       "icon": "address-book",
        "submenu":[
           {
              "name":"Biography",
@@ -20,6 +22,7 @@
     {
        "value":"Products",
        "url":"#",
+       "icon": "shopping-cart",
        "submenu":[
           {
              "value":"Game Applications",
@@ -45,10 +48,12 @@
     },
     {
       "value":"Blog",
+      "icon": "file-alt",
       "url":"#"
    },
    {
       "value":"Privacy and Policy",
+      "icon": "gavel",
       "url":"#"
    }
  ]

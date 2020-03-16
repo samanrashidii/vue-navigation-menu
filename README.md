@@ -1,6 +1,6 @@
 # Vue Navigation Menu
 
-This is a responsive navigation component made with Vuejs and has different variations of layout and color.
+This is a responsive navigation component made with Vuejs and 2 types of horizontal and vertical. You can use different colors, sizes and icons to customize your navigation based on your project.
 
 ## Language
 
@@ -9,7 +9,7 @@ English - LTR
 ## Demo
 
 <!-- You can see demo by clicking below link : <br />
-[https://gifmereact.netlify.com](https://gifmereact.netlify.com) -->
+[https://vuenavigation.netlify.com](https://vuenavigation.netlify.com) -->
 
 ## Start project in development
 
