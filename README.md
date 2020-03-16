@@ -21,7 +21,7 @@ Clone the project from Github:
 git clone git@github.com:samanrashidii/vue-navigation-menu.git
 ```
 
-Install Vue-cli Global Service
+Install Vue-cli Global Service:
 
 ```
 npm install -g @vue/cli
