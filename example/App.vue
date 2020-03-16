@@ -23,6 +23,11 @@ export default {
   },
   components: {
     VueNavigationMenu
+  },
+  methods: {
+    handleClick () {
+      
+    } 
   }
 }
 </script>
@@ -34,6 +39,7 @@ export default {
   top:0;
   left: 0;
   width:100%;
+  font-family: sans-serif;
   z-index: 99;
 }
 

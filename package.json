@@ -36,5 +36,8 @@
     "rollup-plugin-vue": "^5.1.6",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
+  },
+  "dependencies": {
+    "vue-awesome": "^4.0.2"
   }
 }

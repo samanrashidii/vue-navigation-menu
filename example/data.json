@@ -42,5 +42,13 @@
              "url":"#"
           }
        ]
-    }
+    },
+    {
+      "value":"Blog",
+      "url":"#"
+   },
+   {
+      "value":"Privacy and Policy",
+      "url":"#"
+   }
  ]
