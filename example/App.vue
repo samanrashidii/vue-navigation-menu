@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="nav-wrapper">
-      <VueNavigationMenu :items="items" vertical />
+      <VueNavigationMenu :items="items" />
     </div>
   </div>
 </template>

@@ -34,7 +34,17 @@
           {
             "value":"Game Applications",
             "url":"#",
-            "icon": "gamepad"
+            "icon": "gamepad",
+            "submenu":[
+              {
+                "value": "Mafiabuzz",
+                "url": "https://www.mafiabuzz.app"
+              },
+              {
+                "value": "Coinhunter",
+                "url": "https://coinhunter.netlify.com"
+              }
+            ]
           },
           {
             "value":"Web Applications",

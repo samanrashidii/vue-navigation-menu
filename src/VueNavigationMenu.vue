@@ -1,21 +1,30 @@
 <template>
   <nav
   class="vue-navigation-menu"
-  :class="[`vue-navigation-menu--${variant}`, `vue-navigation-menu--icon-${iconVariant}`, {'vertical': vertical}]"
+  :class="[`vue-navigation-menu--${variant}`, `vue-navigation-menu--icon-${iconVariant}`, {'vue-navigation-menu--vertical': vertical}]"
   >
     <ul>
-		<li v-for="(item, index) in items" :key="index">
+		<li v-for="(item, index) in items" :key="index" :class="{'has-submenu': item.submenu}" @mouseenter="hoverMenu($event, true)" @mouseleave="hoverMenu($event, false)">
 			<a href="#" @click.prevent="itemClicked(item.url)">
 				<Icon v-if="item.icon" :name="item.icon" />
 				<span>{{ item.value }}</span>
-				<Icon v-if="item.submenu && item.submenu.length > 0" name="sort-down" class="submenu-arrow" />
+				<Icon v-if="item.submenu && item.submenu.length > 0" name="caret-down" class="submenu-arrow" />
 			</a>
 			<ul class="vue-navigation-menu__submenu" v-if="item.submenu && item.submenu.length > 0">
-				<li v-for="submenuItem in item.submenu" :key="submenuItem.value">
+				<li v-for="submenuItem in item.submenu" :key="submenuItem.value" :class="{'has-submenu': submenuItem.submenu}" @mouseenter="hoverMenu($event, true)" @mouseleave="hoverMenu($event, false)">
 					<a href="#" @click.prevent="itemClicked(submenuItem.url)">
 						<Icon v-if="submenuItem.icon" :name="submenuItem.icon" />
 						<span>{{ submenuItem.value }}</span>
+						<Icon v-if="submenuItem.submenu && submenuItem.submenu.length > 0" name="caret-right" class="submenu-arrow" />
 					</a>
+					<ul class="vue-navigation-menu__submenu" v-if="submenuItem.submenu && submenuItem.submenu.length > 0">
+						<li v-for="innerSubmenu in submenuItem.submenu" :key="innerSubmenu.value">
+							<a href="#" @click.prevent="itemClicked(innerSubmenu.url)">
+								<Icon v-if="innerSubmenu.icon" :name="innerSubmenu.icon" />
+								<span>{{ innerSubmenu.value }}</span>
+							</a>
+						</li>
+					</ul>
 				</li>
 			</ul>
 		</li>
@@ -47,11 +56,20 @@ export default {
 	type: {
 		type: Boolean,
 		default: false
+	},
+	vertical: {
+		type: Boolean,
+		default: false
 	}
   },
   methods: {
 	itemClicked (url) {
 		this.$emit('itemClicked', url)
+	},
+	hoverMenu (e, val) {
+		if (!this.vertical && e.target.className.includes('has-submenu')) {
+			val ? e.target.classList.add('vue-navigation-menu--hovered') : e.target.classList.remove('vue-navigation-menu--hovered')
+		}
 	}
   }
 }
@@ -95,7 +113,6 @@ $vertical-width: 300px;
 				color: inherit;
 				margin-right:5px;
 				&.submenu-arrow{
-					margin-top: -2px;
 					margin-right: 0;
 					margin-left: 5px;
 				}
@@ -104,7 +121,6 @@ $vertical-width: 300px;
 		.vue-navigation-menu__submenu{
 			position: absolute;
 			min-width: $submenu-min-width;
-			overflow: hidden;
 			opacity: 0;
 			visibility: hidden;
 			flex-direction: column;
@@ -125,10 +141,16 @@ $vertical-width: 300px;
 						}
 					}
 				}
+				.vue-navigation-menu__submenu{
+					top:-1px;
+					left: calc(100% - 1px);
+					border-top:none;
+					border-left:1px solid transparent;
+				}
 			}
 		}
-		&:hover{
-			.vue-navigation-menu__submenu {
+		&.vue-navigation-menu--hovered{
+			> .vue-navigation-menu__submenu {
 				opacity: 1;
 				visibility: visible;
 			}
@@ -146,7 +168,7 @@ $vertical-width: 300px;
 			}
 		}
 		.vue-navigation-menu__submenu{
-			border-top-color: $darker;
+			border-color: $darker !important;
 		}
 	}
   }
@@ -166,7 +188,7 @@ $vertical-width: 300px;
 		}
 	}
   }
-  &[vertical]{
+  &.vue-navigation-menu--vertical{
 	max-width: $vertical-width;
 	min-height: 100vh;
 	height: 100%;
