@@ -33,7 +33,7 @@
   "devDependencies": {
     "bili": "^4.8.1",
     "node-sass": "^4.13.1",
-    "rollup-plugin-vue": "^5.1.6",
+    "rollup-plugin-vue": "^6.0.0",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
   },
